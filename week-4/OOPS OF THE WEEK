@@ -1,1 +1,35 @@
+#include <stdio.h>
 
+struct Point {
+    int x;
+    int y;
+};
+
+void setX(struct Point *p, int x) {
+    p->x = x;
+}
+
+void setY(struct Point *p, int y) {
+    p->y = y;
+}
+
+void setXY(struct Point *p, int x, int y) {
+    p->x = x;
+    p->y = y;
+}
+
+void display(struct Point p) {
+    printf("Point = (%d, %d)\n", p.x, p.y);
+}
+
+int main() {
+    struct Point p = {0, 0};
+
+    display(p);
+
+    setXY(&p, 10, 20);
+
+    display(p);
+
+    return 0;
+}
